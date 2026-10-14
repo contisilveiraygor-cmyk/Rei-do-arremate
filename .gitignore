@@ -1,0 +1,20 @@
+# Internal data and analysis should not be published in the public repo.
+/data/
+/docs/
+/legacy/
+/scripts/
+
+# Runtime/session secrets from WhatsApp/Baileys.
+auth_info/
+**/auth_info/
+qrcode.png
+
+# Dependencies and caches.
+node_modules/
+__pycache__/
+*.pyc
+
+# Local environment files.
+.env
+.env.*
+!.env.example

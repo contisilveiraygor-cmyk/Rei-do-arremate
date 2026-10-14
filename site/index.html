@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Vitrine de oportunidades do Rei do Arremate com produtos de disponibilidade limitada."
+    />
+    <title>Rei do Arremate | Vitrine</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Rei do Arremate">
+        <span class="brand-mark">R</span>
+        <span>
+          <strong>Rei do Arremate</strong>
+          <small>Oportunidades com consulta de disponibilidade</small>
+        </span>
+      </a>
+      <div class="topbar-actions">
+        <button class="ghost-button" id="copyListButton" type="button">Copiar lista</button>
+        <a class="primary-button" id="whatsappHeaderButton" href="#" data-action="whatsapp">
+          Consultar no WhatsApp
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section class="catalog-shell" aria-labelledby="catalogTitle">
+        <div class="catalog-head">
+          <div>
+            <p class="eyebrow">vitrine inicial</p>
+            <h1 id="catalogTitle">Produtos recentes para revenda rápida</h1>
+          </div>
+          <div class="stats" aria-label="Resumo da vitrine">
+            <div>
+              <strong id="totalProducts">0</strong>
+              <span>produtos</span>
+            </div>
+            <div>
+              <strong id="limitedProducts">0</strong>
+              <span>estoque baixo</span>
+            </div>
+            <div>
+              <strong id="lastUpdate">--</strong>
+              <span>atualização</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="filters" id="filters" role="search">
+          <label class="search-field">
+            <span>Buscar</span>
+            <input
+              id="searchInput"
+              type="search"
+              autocomplete="off"
+              placeholder="Nome, código ou categoria"
+            />
+          </label>
+
+          <label>
+            <span>Categoria</span>
+            <select id="categorySelect">
+              <option value="">Todas</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Preço</span>
+            <select id="priceSelect">
+              <option value="">Todos</option>
+              <option value="0-50">Até R$ 50</option>
+              <option value="50-100">R$ 50 a R$ 100</option>
+              <option value="100-200">R$ 100 a R$ 200</option>
+              <option value="200-99999">Acima de R$ 200</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Ordenar</span>
+            <select id="sortSelect">
+              <option value="recent">Mais recentes</option>
+              <option value="priceAsc">Menor preço</option>
+              <option value="priceDesc">Maior preço</option>
+              <option value="quantityDesc">Maior quantidade</option>
+            </select>
+          </label>
+        </form>
+
+        <div class="notice" role="note">
+          Os produtos dependem de confirmação de disponibilidade antes da venda. Esta versão não
+          fecha pedido direto.
+        </div>
+
+        <section class="product-grid" id="productGrid" aria-live="polite"></section>
+
+        <div class="empty-state" id="emptyState" hidden>
+          Nenhum produto encontrado com esses filtros.
+        </div>
+      </section>
+    </main>
+
+    <dialog class="product-dialog" id="productDialog">
+      <button class="icon-button close-dialog" id="closeDialogButton" type="button" aria-label="Fechar">
+        ×
+      </button>
+      <div class="dialog-content" id="dialogContent"></div>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
